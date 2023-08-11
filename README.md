@@ -1,3 +1,8 @@
+# kotlin-docker-isolation-provider
+
+## Install
+npm i @lotos2021/kotlin-docker-isolation-provider
+
 ## Run
 
 1) Create a connection of TestRun instance

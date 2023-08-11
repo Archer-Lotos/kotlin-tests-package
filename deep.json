@@ -1,0 +1,134 @@
+{
+  "package": {
+    "name": "@lotos2021/kotlin-tests",
+    "version": "0.0.6"
+  },
+  "data": [
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "SyncTextFile"
+      },
+      "id": 1
+    },
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "Handler"
+      },
+      "id": 2
+    },
+    {
+      "package": {
+        "dependencyId": 1,
+        "containValue": "dockerSupportsKotlin"
+      },
+      "id": 3
+    },
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "Type"
+      },
+      "id": 4
+    },
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "HandleInsert"
+      },
+      "id": 5
+    },
+    {
+      "id": "kotlinRuntimeErrorCode1",
+      "type": 1,
+      "value": {
+        "value": "suspend fun fn(args: dynamic):Any {\n    val deep = args.deep\n    val result = deep.insert(1)\n    return result\n}"
+      }
+    },
+    {
+      "id": "kotlinSelectResolveCode2",
+      "type": 1,
+      "value": {
+        "value": "suspend fun fn(args: dynamic):Any {\n    val deep = args.deep\n    val result = deep.select(1)\n    return result\n}"
+      }
+    },
+    {
+      "id": "kotlinSelectResolveHandler2",
+      "type": 2,
+      "from": 3,
+      "to": "kotlinSelectResolveCode2"
+    },
+    {
+      "id": "TestRun",
+      "type": 4
+    },
+    {
+      "id": "kotlinSelectResolveHandleInsert2",
+      "type": 5,
+      "from": "TestRun",
+      "to": "kotlinSelectResolveHandler2"
+    },
+    {
+      "id": "kotlinResolveCode1",
+      "type": 1,
+      "value": {
+        "value": "suspend fun fn(args: dynamic):Any {\n    val data = args.data\n    val deep = args.deep\n    val gql = args.gql\n    val result = \"Processed data: $data, deep: $deep, gql: $gql\"\n    return result\n}"
+      }
+    },
+    {
+      "id": "kotlinResolveHandler1",
+      "type": 2,
+      "from": 3,
+      "to": "kotlinResolveCode1"
+    },
+    {
+      "id": "kotlinResolveHandleInsert1",
+      "type": 5,
+      "from": "TestRun",
+      "to": "kotlinResolveHandler1"
+    },
+    {
+      "id": "kotlinCompileTimeErrorCode1",
+      "type": 1,
+      "value": {
+        "value": "suspend fun fn(args: dynamic):Any {\n    val deep = args.deep\n    val result = deep.select(tt1)\n    return result\n}"
+      }
+    },
+    {
+      "id": "kotlinCompileTimeErrorHandler1",
+      "type": 2,
+      "from": 3,
+      "to": "kotlinCompileTimeErrorCode1"
+    },
+    {
+      "id": "kotlinCompileTimeErrorHandleInsert1",
+      "type": 5,
+      "from": "TestRun",
+      "to": "kotlinCompileTimeErrorHandler1"
+    },
+    {
+      "id": "kotlinRuntimeErrorHandler1",
+      "type": 2,
+      "from": 3,
+      "to": "kotlinRuntimeErrorCode1"
+    },
+    {
+      "id": "kotlinRuntimeErrorHandleInsert1",
+      "type": 5,
+      "from": "TestRun",
+      "to": "kotlinRuntimeErrorHandler1"
+    }
+  ],
+  "errors": [],
+  "dependencies": [
+    {
+      "name": "@deep-foundation/core",
+      "version": "0.0.2"
+    },
+    {
+      "name": "@lotos2021/kotlin-docker-isolation-provider",
+      "version": "0.0.3"
+    }
+  ]
+}
